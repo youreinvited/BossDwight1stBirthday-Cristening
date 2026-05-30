@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Boss Dwight – Turning One</title>
+<meta property="og:title" content="Boss Dwight Baptism and 1st Birthday">
+<meta property="og:description" content="Boss Dwight is turning one and ready for his blessing, join us as we celebrate his birthday and baptism. A milestone launch he'll never remember, but we'll never forget.">
+<meta property="og:image" content="envelop.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boss Dwight Baptism and 1st Birthday">
+<meta name="twitter:description" content="Boss Dwight is turning one and ready for his birthday and baptism. A milestone launch he'll never remember, but we'll never forget.">
+<meta name="twitter:image" content="envelop.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #e8eaf0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.phone {
+  width: 100%;
+  max-width: 430px;
+  background: #0b1a35;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* === ENVELOPE OVERLAY === */
+#envelopeOverlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.envelope-img {
+  width: 80%;
+  cursor: pointer;
+  animation: wiggle 2s infinite;
+}
+
+.envelope-note {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+/* === PINSTRIPES === */
+.phone::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 430px;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    transparent 28px,
+    rgba(255,255,255,0.035) 28px,
+    rgba(255,255,255,0.035) 30px
+  );
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  z-index: 1;
+  padding-top: 26px;
+  text-align: center;
+  opacity: 0;
+  transform: translateZ(0);
+}
+
+.hero.play-anim {
+  animation: fadeInDown 1.2s ease-out forwards;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 0;
+}
+
+.hero.play-anim .hero-title {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.hero-subtitle {
+  font-size: 42px;
+  font-weight: 900;
+  color: #1a7fe8;
+  letter-spacing: 1px;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  opacity: 0;
+}
+
+.hero.play-anim .hero-subtitle {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+.rsvp-btn {
+  position: absolute;
+  top: 128px;
+  right: 18px;
+  background: #1a7fe8;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 10px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Baby photo area */
+.baby-wrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  z-index: 4;
+  margin-top: -8px;
+}
+
+.baby-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 4;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.hero.play-anim .baby-photo {
+  animation: zoomInBounce 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, floatingBaby 4s ease-in-out 1.5s infinite;
+}
+
+/* === INFO ICONS BAR === */
+.info-icons-bar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 2px 18px 12px;
+  margin-top: -70px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+  transform: translateZ(0);
+}
+
+.info-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.info-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid #1a7fe8;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #1a7fe8;
+  transition: background 0.2s, transform 0.2s;
+  transform: translateZ(0);
+}
+
+.info-icon-btn:active .info-icon-circle {
+  background: #1a7fe8;
+  transform: scale(0.94);
+}
+
+.info-icon-btn:active .info-icon-circle svg {
+  stroke: #fff;
+}
+
+.info-icon-label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #1a7fe8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* === POPUP OVERLAY === */
+.info-popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 500;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.info-popup-overlay.open {
+  display: flex;
+}
+
+.info-popup-sheet {
+  background: #0e2245;
+  border: 2px solid #1a7fe8;
+  border-radius: 18px 18px 0 0;
+  padding: 24px 22px 34px;
+  width: 100%;
+  animation: slideUpSheet 0.35s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  will-change: transform;
+}
+
+.info-popup-close {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.info-popup-close button {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 22px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.info-popup-title {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #1a7fe8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.info-popup-value {
+  font-size: 18px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+}
+
+.info-popup-sub {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+/* === SECTION HEADER === */
+.section-header {
+  text-align: center;
+  padding: 32px 20px 18px;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.section-top-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.section-main-title {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* === BOARD GRID === */
+.board-grid-wrap {
+  position: relative;
+  z-index: 1;
+  padding: 0 14px;
+  transform: translateZ(0);
+}
+
+.board-pairs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.board-card {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px 5px 14px;
+  text-align: center;
+  border: 1px solid rgba(26,127,232,0.2);
+  transition: transform 0.3s ease;
+  transform: translateZ(0);
+}
+
+.board-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(26, 127, 232, 0.2);
+}
+
+.board-avatar-circle {
+  width: 54px;
+  height: 54px;
+  background: #1a7fe8;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: circleBounce 3s ease-in-out infinite alternate;
+}
+
+.board-avatar-circle svg {
+  width: 28px;
+  height: 28px;
+  fill: #ffffff;
+}
+
+.board-avatar-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.board-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+/* === MOMENTS === */
+.moments-section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  transform: translateZ(0);
+}
+
+.moments-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 20px 20px 30px 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
+  will-change: scroll-position;
+  transform: translateZ(0);
+}
+.moments-strip::-webkit-scrollbar { display: none; }
+
+.moment-item {
+  flex: 0 0 85%;
+  aspect-ratio: 4/5;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  background: #1a2f52;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
+  touch-action: manipulation;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.moment-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.moment-item.center-card {
+  border-color: #1a7fe8;
+  z-index: 2;
+  transform: scale(1.03) translateZ(0);
+  box-shadow: 0 15px 40px rgba(26, 127, 232, 0.4);
+}
+
+.moments-dots {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.moments-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+}
+.moments-dot.active { background: #1a7fe8; }
+
+/* === BOTTOM GRID === */
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 28px 14px 36px;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.bottom-card {
+  background: #0e2245;
+  border-radius: 10px;
+  padding: 16px 14px;
+  border: 1px solid rgba(26,127,232,0.2);
+  transform: translateZ(0);
+}
+
+.bottom-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+}
+
+.bottom-card-supporting {
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+/* === COUNTDOWN SECTION === */
+.countdown-section {
+  padding: 0 18px;
+  margin-top: 12px;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.countdown-card {
+  background: #0e2245;
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(26,127,232,0.4);
+  text-align: center;
+}
+
+.countdown-row {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-num {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1a7fe8;
+}
+
+.countdown-label {
+  font-family: 'Cinzel', serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* RSVP form */
+.form-label {
+  font-size: 9px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  padding: 9px 8px;
+  outline: none;
+  margin-bottom: 10px;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus {
+  border-color: #1a7fe8;
+}
+
+.form-textarea {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  padding: 9px 8px;
+  outline: none;
+  margin-bottom: 10px;
+  height: 60px;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+.form-textarea:focus {
+  border-color: #1a7fe8;
+}
+
+.form-select {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  color: #111;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  padding: 9px 8px;
+  outline: none;
+  margin-bottom: 12px;
+  appearance: auto;
+}
+
+.radio-group {
+  margin: 15px 0;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.radio-option:active {
+  transform: scale(0.95);
+}
+
+.radio-option.sick-leave {
+  color: #ff4d4d;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #1a7fe8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  padding: 11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(26, 127, 232, 0.3);
+}
+
+.submit-btn:hover {
+  background: #0d5fb9;
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(26, 127, 232, 0.4);
+}
+
+/* Location card */
+.map-embed-wrap {
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  border: 1px solid rgba(26,127,232,0.3);
+}
+
+.map-venue-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.open-maps-btn {
+  display: block;
+ text-align: center;
+  background: #1a7fe8;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 11px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.open-maps-btn:last-child { margin-bottom: 0; }
+
+/* Success */
+.success-msg {
+  display: none;
+  text-align: center;
+  color: #4caf50;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.qr-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at center, #162b4d 0%, #0b1a35 100%);
+  position: relative;
+  transform: translateZ(0);
+}
+
+.qr-section::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #1a7fe8;
+  filter: blur(80px);
+  opacity: 0.2;
+  z-index: 0;
+  transform: translateZ(0);
+}
+
+.qr-container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.qr-photo {
+  width: 280px;
+  height: 280px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  animation: qrGlow 3s infinite;
+  transition: transform 0.3s;
+  border: 4px solid #1a7fe8;
+  will-change: box-shadow;
+}
+
+.qr-photo:hover {
+  transform: scale(1.05);
+}
+
+.qr-decoration {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.qr-dot {
+  width: 6px;
+  height: 6px;
+  background: #1a7fe8;
+  border-radius: 50%;
+  animation: bounceCount 0.8s infinite alternate;
+  will-change: transform;
+}
+
+.qr-dot:nth-child(2) { animation-delay: 0.2s; }
+.qr-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* === FOOTER === */
+.footer {
+  padding: 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0);
+}
+
+.footer-quote {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  padding: 0 14px;
+  animation: fadeInUp 1.2s ease-out;
+  background: linear-gradient(135deg, #ffffff 0%, #1a7fe8 50%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+  text-shadow: 0 0 15px rgba(26,127,232,0.3);
+  will-change: background-position;
+}
+
+.footer-message {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 30px;
+  padding: 0 14px;
+}
+
+.footer-highlight-box {
+  background: #3a86ff;
+  width: 100%;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.footer-highlight-text {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomInBounce {
+  0% { opacity: 0; transform: scale(0.3); }
+  70% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes qrGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(26, 127, 232, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(26, 127, 232, 0.6); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes bounceCount {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+@keyframes floatingBaby {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes circleBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mute-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 15px;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(26, 127, 232, 0.5);
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1a7fe8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+  transform: translateZ(0);
+}
+
+.confetti {
+  position: absolute;
+  width: 24px;
+  height: 12px;
+  background: #85bb65;
+  border-radius: 1px;
+  z-index: 5;
+  pointer-events: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: bold;
+  color: #1b4d1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  transform: translateZ(0);
+}
+
+.hero-title {
+  background: linear-gradient(90deg, #fff, #1a7fe8, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+  will-change: background-position;
+}
+
+@keyframes startupTextGlow {
+  0% { text-shadow: 0 0 10px rgba(26,127,232,0.2), 0 0 20px rgba(26,127,232,0.1); }
+  50% { text-shadow: 0 0 20px rgba(26,127,232,0.6), 0 0 35px rgba(26,127,232,0.4), 0 0 50px rgba(26,127,232,0.2); transform: scale(1.03); }
+  100% { text-shadow: 0 0 10px rgba(26,127,232,0.2), 0 0 20px rgba(26,127,232,0.1); }
+}
+
+.startup-title-animated {
+  font-family: 'Cinzel', serif !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px !important;
+  background: linear-gradient(135deg, #ffffff 0%, #1a7fe8 50%, #ffffff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite, startupTextGlow 3s ease-in-out infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  will-change: background-position, text-shadow, transform;
+}
+
+</style>
+</head>
+<body>
+
+<div id="envelopeOverlay" onclick="openEnvelope()">
+  <img src="envelop.png" alt="Envelope" class="envelope-img">
+  <div class="envelope-note">click for more</div>
+</div>
+
+<div class="info-popup-overlay" id="infoPopupOverlay" onclick="closeInfoPopup(event)">
+  <div class="info-popup-sheet">
+    <div class="info-popup-close">
+      <button onclick="closeInfoPopupBtn()">✕</button>
+    </div>
+    <div class="info-popup-title" id="infoPopupTitle"></div>
+    <div class="info-popup-value" id="infoPopupValue"></div>
+    <div class="info-popup-sub" id="infoPopupSub"></div>
+  </div>
+</div>
+
+<div class="phone">
+
+  <audio id="bgMusic" src="babyboss.mp3" loop></audio>
+  <button class="mute-toggle" id="muteToggle">
+    <svg id="muteIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+    </svg>
+  </button>
+
+  <div class="hero" id="heroSection">
+    <div class="hero-eyebrow">Our Baby</div>
+    <div class="hero-title">BOSS DWIGHT</div>
+    <div class="hero-subtitle">IS TURNING ONE</div>
+
+    <div class="baby-wrap">
+      <img src="Dwightfront.png" alt="Boss Dwight" class="baby-photo">
+    </div>
+  </div>
+
+  <div class="info-icons-bar">
+    <button class="info-icon-btn" onclick="openInfoPopup('date')">
+      <div class="info-icon-circle">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1a7fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <div class="info-icon-label">DATE</div>
+    </button>
+
+    <button class="info-icon-btn" onclick="openInfoPopup('time')">
+      <div class="info-icon-circle">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1a7fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9"/>
+          <polyline points="12 7 12 12 15 15"/>
+        </svg>
+      </div>
+      <div class="info-icon-label">TIME</div>
+    </button>
+
+    <button class="info-icon-btn" onclick="openInfoPopup('ceremony')">
+      <div class="info-icon-circle">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1a7fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+          <path d="M2 17l10 5 10-5"/>
+          <path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <div class="info-icon-label">CEREMONY</div>
+    </button>
+
+    <button class="info-icon-btn" onclick="openInfoPopup('reception')">
+      <div class="info-icon-circle">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1a7fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+      </div>
+      <div class="info-icon-label">RECEPTION</div>
+    </button>
+  </div>
+
+  <div class="countdown-section scroll-reveal">
+    <div class="countdown-card">
+      <div class="bottom-card-title">Meeting start:</div>
+      <div class="countdown-row">
+        <div class="countdown-item">
+          <span class="countdown-num" id="days">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="hours">00</span>
+          <span class="countdown-label">Hrs</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="minutes">00</span>
+          <span class="countdown-label">Min</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="seconds">00</span>
+          <span class="countdown-label">Sec</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-header scroll-reveal">
+    <div class="section-top-label">TOP MANAGEMENT:</div>
+    <div class="section-main-title">GODPARENT</div>
+  </div>
+
+  <div class="board-grid-wrap scroll-reveal">
+    <div class="board-pairs-grid">
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 0s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778261750/AIRetouch_20260509_013530299_yq18tk.png" alt="Dreena Marjory Damasco" loading="lazy">
+        </div>
+        <div class="board-name">DREENA MARJORY<br>DAMASCO</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 0.2s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778265290/AIRetouch_20260509_023422702_vk7hej.png" alt="Alisson Velasco" loading="lazy">
+        </div>
+        <div class="board-name">ALISSON<br>VELASCO</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 0.4s;">
+          <img src="Kate nicole panopio.png" alt="Kate Nicole Panopio" loading="lazy">
+        </div>
+        <div class="board-name">KATE NICOLE<br>PANOPIO</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 0.6s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778261218/AIRetouch_20260509_012544797_coj4ce.png" alt="Romela Baingan" loading="lazy">
+        </div>
+        <div class="board-name">Romela<br>Baingan</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 0.8s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778259182/Galvan_syz9nh.png" alt="Patricia Galvan" loading="lazy">
+        </div>
+        <div class="board-name">PATRICIA<br>GALVAN</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 1s;">
+          <img src="Excelyn.png" alt="Excelyn Farinas" loading="lazy">
+        </div>
+        <div class="board-name">EXCELYN<br>FARINAS</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 1.2s;">
+          <img src="FERDINAND.png" alt="Jade Cedric Lamoste" loading="lazy">
+        </div>
+        <div class="board-name">Jade cedric<br>Lamoste</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 1.4s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778260588/AIRetouch_20260509_003424868_u9n8iy.png" alt="Eugine ray Nacario" loading="lazy">
+        </div>
+        <div class="board-name">Eugine ray<br>Nacario</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 1.6s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778260318/AIRetouch_20260509_011107534_zp34rr.png" alt="Cristian Azcueta" loading="lazy">
+        </div>
+        <div class="board-name">Cristian<br>Azcueta</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 1.8s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778260742/AIRetouch_20260509_011837231_g9dle2.png" alt="Ryan Samarita" loading="lazy">
+        </div>
+        <div class="board-name">Ryan<br>Samarita</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 2s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778378392/AIRetouch_20260510_095942927_g56arw.png" alt="Marco Tumampad" loading="lazy">
+        </div>
+        <div class="board-name">MARCO<br>TUMAMPAD</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 2.2s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778382850/AIRetouch_20260510_111350187_dyquuj.png" alt="Jame Kevin Ladia" loading="lazy">
+        </div>
+        <div class="board-name">JAME KEVIN<br>LADIA</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 2.4s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778383207/AIRetouch_20260510_111937427_piqp3k.png" alt="Noel Baybaya" loading="lazy">
+        </div>
+        <div class="board-name">NOEL<br>BAYbaya</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 2.6s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778383623/AIRetouch_20260510_112601018_kgowqy.png" alt="Rhoy Louie Sealmoy" loading="lazy">
+        </div>
+        <div class="board-name">RHOY LOUIE<br>SEALMOY</div>
+      </div>
+
+      <div class="board-card">
+        <div class="board-avatar-circle" style="animation-delay: 2.8s;">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1779252957/AIRetouch_20260520_052738765_vlckzy.png" alt="Gino Apinar" loading="lazy">
+        </div>
+        <div class="board-name">Gino<br>Apinar</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="moments-section scroll-reveal">
+    <div class="section-header">
+      <div class="section-top-label" style="font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700; color: #1a7fe8; letter-spacing: 3px; margin-bottom: 6px; text-shadow: 0 0 10px rgba(26, 127, 232, 0.3);">EXECUTIVE HIGHLIGHTS:</div>
+      <div class="section-main-title" style="font-family: 'Cinzel', serif; font-size: 34px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; background: linear-gradient(90deg, #ffffff, #1a7fe8, #ffffff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 3s linear infinite; text-shadow: 0 4px 12px rgba(0,0,0,0.5);">BOSS Moments</div>
+    </div>
+
+    <div class="moments-strip" id="momentsStrip">
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/121Vy54.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/yjZsawm.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/1j1unKe.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/sXEHNe2.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/3IryCrY.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/gQ9IHn5.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/TRWWB2e.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/YZdySNH.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/KkZpe6h.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/KJwCPuR.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/RjRKYuC.jpg" loading="lazy"></div>
+      <div class="moment-item" onclick="highlightMoment(this)"><img src="https://imgur.com/vJDUUZc.jpg" loading="lazy"></div>
+    </div>
+
+    <div class="moments-dots">
+      <div class="moments-dot active"></div>
+      <div class="moments-dot"></div>
+      <div class="moments-dot"></div>
+      <div class="moments-dot"></div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 15px; margin-bottom: 25px; padding: 0 20px;">
+      <a href="https://imgur.com/CCibzOh" target="_blank" rel="noopener noreferrer" class="open-maps-btn" style="display: inline-block; padding: 12px 24px; min-width: 200px;">MORE PHOTOS</a>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+
+    <div class="qr-section scroll-reveal">
+      <div class="qr-container">
+        <div class="startup-title-animated">Start Up Capital</div>
+        <div class="qr-decoration">
+          <div class="qr-dot"></div>
+          <div class="qr-dot"></div>
+          <div class="qr-dot"></div>
+        </div>
+        <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778265733/AIRetouch_20260509_024050127_qullho.png" alt="Gift QR Code" class="qr-photo" style="margin-top: 30px; margin-bottom: 30px;" loading="lazy">
+        <div class="bottom-card-supporting" style="font-family: 'Montserrat', sans-serif; font-size: 13px; padding: 0 15px; max-width: 340px; margin: 0 auto; color: #ffffff; font-weight: 400; font-style: italic; letter-spacing: 0.5px;">
+          💼 <strong>We kindly request no physical gifts</strong> but if you insist, You may help fund <strong>Boss Dwight</strong> future with a <strong>cash contribution</strong> or 
+          scan the <strong>QR code</strong> for instant deposit. 💸<br><br>
+          <span style="font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 700; text-transform: uppercase; font-size: 10px; color: #1a7fe8;">Your support is the ultimate startup capital!</span>
+        </div>
+        <div class="qr-decoration" style="margin-top: 20px;">
+          <div class="qr-dot" style="animation-delay: 0.6s"></div>
+          <div class="qr-dot" style="animation-delay: 0.8s"></div>
+          <div class="qr-dot" style="animation-delay: 1s"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-card scroll-reveal">
+      <div class="bottom-card-title">HEAD OFFICE LOCATION</div>
+
+      <div class="map-embed-wrap">
+        <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778266091/AIRetouch_20260509_024739283_c4dspp.png" alt="Imus Cathedral" style="width:100%; height:auto; display:block;" loading="lazy">
+      </div>
+      <div class="map-venue-label">CEREMONY</div>
+      <a class="open-maps-btn"
+         href="https://maps.app.goo.gl/h67EJHy2s9s4PZt17"
+         target="_blank">OPEN IN MAPS</a>
+
+      <div class="map-embed-wrap">
+        <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1778266486/AIRetouch_20260509_025427339_xtioqs.png" alt="Kenny Rogers Roasters-Imus" style="width:100%; height:auto; display:block;" loading="lazy">
+      </div>
+      <div class="map-venue-label">RECEPTION</div>
+      <a class="open-maps-btn"
+         href="https://maps.app.goo.gl/9HSq1N54Cn7tSqvd7"
+         target="_blank">OPEN IN MAPS</a>
+    </div>
+
+    <div class="bottom-card scroll-reveal" id="rsvp">
+      <form action="https://formspree.io/f/xwvyrywn" method="POST" id="rsvpForm">
+        <div class="bottom-card-title">Please submit your corporate status report for Boss Dwight's big day.</div>
+        <div class="bottom-card-supporting" style="font-weight:700; color:#1a7fe8;">Submit your RSVP not later than June 20, 2026.</div>
+        
+        <label class="form-label" style="margin-bottom: 15px;">NAME OF ATTENDEES:</label>
+        <textarea class="form-textarea" name="Guest Name" id="nameInput" style="height: 100px;" required></textarea>
+        
+        <label class="form-label">NUMBER OF ADULTS:</label>
+        <select class="form-select" name="Adult Attendees" id="adultCount" required>
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5+</option>
+        </select>
+
+        <label class="form-label">NUMBER OF CHILDREN:</label>
+        <select class="form-select" name="Child Attendees" id="childCount" required>
+          <option value="0" selected>0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5+</option>
+        </select>
+
+        <label class="form-label">MESSAGE FOR THE BOSS:</label>
+        <textarea class="form-textarea" name="Message" id="messageInput"></textarea>
+
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="Attendance" value="Reporting on duty" required> REPORTING ON DUTY
+          </label>
+          <label class="radio-option sick-leave">
+            <input type="radio" name="Attendance" value="On leave"> ON LEAVE
+          </label>
+        </div>
+
+        <button class="submit-btn" type="submit">SUBMIT TO HEAD OFFICE</button>
+      </form>
+      <div class="success-msg" id="successMsg">✅ RSVP Confirmed!</div>
+    </div>
+
+  </div>
+
+  <div class="footer scroll-reveal">
+    <div class="footer-quote">Boss Dwight is turning one and ready for his blessing, join us as we celebrate his birthday and baptism. A milestone launch he'll never remember, but we'll never forget.</div>
+    <div class="footer-highlight-box">
+      <div class="footer-highlight-text">boss dwight 2026 (c) all rights reserve</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Envelope Logic
+function openEnvelope() {
+  const overlay = document.getElementById('envelopeOverlay');
+  const hero = document.getElementById('heroSection');
+  overlay.style.transform = 'translate(-50%, -100%)';
+  
+  hero.classList.add('play-anim');
+  
+  const audio = document.getElementById('bgMusic');
+  audio.play().catch(e => console.log("Audio play failed:", e));
+  
+  spawnConfetti();
+  
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 800);
+}
+
+// Info Popup Logic
+const infoData = {
+  date: { title: 'DATE', value: 'JULY 5, 2026', sub: 'Mark your calendars!' },
+  time: { title: 'TIME', value: 'CHURCH: 10:00 AM | RECEPTION: 11:00 AM', sub: 'Event schedule' },
+  ceremony: { title: 'CEREMONY', value: 'IMUS CATHEDRAL', sub: '10:00 AM Ceremony | Imus, Cavite' },
+  reception: { title: 'RECEPTION', value: "KENNY ROGERS ROASTERS-IMUS", sub: '11:00 AM Reception | Imus, Cavite' }
+};
+
+function openInfoPopup(type) {
+  const data = infoData[type];
+  document.getElementById('infoPopupTitle').textContent = data.title;
+  document.getElementById('infoPopupValue').textContent = data.value;
+  document.getElementById('infoPopupSub').textContent = data.sub;
+  document.getElementById('infoPopupOverlay').classList.add('open');
+}
+
+// Fullscreen Pinterest Gallery Logic
+const galleryImages = [
+  "https://i.imgur.com/CCibzOh.png",
+  "https://i.imgur.com/BNMb2pz.png",
+  "https://i.imgur.com/BjrHLVy.png",
+  "https://i.imgur.com/mC6eKNX.png",
+  "https://i.imgur.com/iJu7KDD.png",
+  "https://i.imgur.com/OFbO83C.png",
+  "https://i.imgur.com/xxYjSfh.png",
+  "https://i.imgur.com/ZYwbo1R.png",
+  "https://i.imgur.com/Z03wQva.png",
+  "https://i.imgur.com/nzhFcU3.png",
+  "https://i.imgur.com/aE5WmDA.png",
+  "https://i.imgur.com/51FXckx.png",
+  "https://i.imgur.com/EyJkdq6.png",
+  "https://i.imgur.com/1JnAAHR.png",
+  "https://i.imgur.com/8BDc6wy.png",
+  "https://i.imgur.com/ppgsfgN.png",
+  "https://i.imgur.com/C7Zd9dD.png",
+  "https://i.imgur.com/5tqJmZE.png",
+  "https://i.imgur.com/qAKFk4P.png",
+  "https://imgur.com/Gu0rSNM.png",
+  "https://i.imgur.com/Kh1O9NZ.png",
+  "https://i.imgur.com/qsbQg3v.png",
+  "https://i.imgur.com/4OVdyJd.png",
+  "https://i.imgur.com/v5BJCWY.png",
+  "https://i.imgur.com/hWxPgCT.png",
+  "https://i.imgur.com/zbI9ZD7.png",
+  "https://i.imgur.com/cuGxrFM.png",
+  "https://i.imgur.com/ZHy4bCK.png",
+  "https://i.imgur.com/x5aKtkB.png",
+  "https://i.imgur.com/KsuaStb.png",
+  "https://i.imgur.com/o5V3KIM.png",
+  "https://i.imgur.com/Wuj9YWB.png",
+  "https://i.imgur.com/08KKupd.png",
+  "https://i.imgur.com/dZ8D8Eh.png",
+  "https://i.imgur.com/joEEOSf.png",
+  "https://i.imgur.com/75kulhG.png",
+  "https://i.imgur.com/t5NxGex.png",
+  "https://i.imgur.com/CfbLJh8.png",
+  "https://i.imgur.com/xzaSxcx.png",
+  "https://i.imgur.com/RGD1KAY.png",
+  "https://i.imgur.com/G3J2EbC.png",
+  "https://i.imgur.com/T3E81Ko.png",
+  "https://i.imgur.com/pFLcdF5.png",
+  "https://i.imgur.com/gbWxN0p.png",
+  "https://i.imgur.com/2b2WBQY.png",
+  "https://i.imgur.com/LaXwZvB.png",
+  "https://i.imgur.com/ojbAE7d.png",
+  "https://i.imgur.com/ehK6Opu.png",
+  "https://i.imgur.com/tIMECnE.png",
+  "https://i.imgur.com/gzBn04k.png",
+  "https://i.imgur.com/foQqdrm.png",
+  "https://i.imgur.com/ZajP5tS.png",
+  "https://i.imgur.com/QFtZaST.png",
+  "https://i.imgur.com/TyUR3kl.png",
+  "https://i.imgur.com/wDYpHaA.png",
+  "https://i.imgur.com/rxjqYwe.png",
+  "https://i.imgur.com/6yMhXxQ.png",
+  "https://i.imgur.com/skySO84.png",
+  "https://i.imgur.com/JWRm9ye.png",
+  "https://i.imgur.com/mFNq2w4.png"
+];
+
+const uniqueGalleryImages = [...new Set(galleryImages)];
+
+function createPinterestGallery() {
+  const overlay = document.createElement('div');
+  overlay.id = 'pinterestGalleryOverlay';
+  overlay.style.cssText = 'position:fixed; top:0; left:50%; transform:translateX(-50%); width:100%; max-width:430px; height:100%; background:#0b1a35; z-index:2000; display:none; flex-direction:column; overflow-y:auto; padding:20px 10px; -webkit-overflow-scrolling:touch; will-change:scroll-position;';
+
+  const header = document.createElement('div');
+  header.style.cssText = 'display:flex; justify-content:between; align-items:center; margin-bottom:20px; padding:0 10px; width:100%;';
+  
+  const backBtn = document.createElement('button');
+  backBtn.innerHTML = '✕';
+  backBtn.style.cssText = 'background:none; border:none; color:#ffffff; font-size:24px; cursor:pointer;';
+  backBtn.onclick = () => {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+
+  const title = document.createElement('div');
+  title.innerText = 'BOSS ALBUM';
+  title.style.cssText = 'font-family:"Montserrat", sans-serif; font-size:16px; font-weight:900; color:#ffffff; letter-spacing:2px; margin-left:auto; margin-right:auto;';
+
+  header.appendChild(backBtn);
+  header.appendChild(title);
+  const spacer = document.createElement('div');
+  spacer.style.width = '24px';
+  header.appendChild(spacer);
+  overlay.appendChild(header);
+
+  const container = document.createElement('div');
+  container.style.cssText = 'display:grid; grid-template-columns:1fr 1fr; gap:12px; width:100%; padding:0 5px;';
+
+  uniqueGalleryImages.forEach((src, index) => {
+    const card = document.createElement('div');
+    card.style.cssText = 'position:relative; border-radius:12px; overflow:hidden; background:#0e2245; border:1px solid rgba(26,127,232,0.25); box-shadow:0 4px 15px rgba(0,0,0,0.3); line-height:0; transform:translateZ(0);';
+    
+    const img = document.createElement('img');
+    img.src = src;
+    img.style.cssText = 'width:100%; height:200px; object-fit:cover; display:block;';
+    img.loading = 'lazy';
+    
+    card.appendChild(img);
+    container.appendChild(card);
+  });
+
+  overlay.appendChild(container);
+
+  const footerCloseBtnWrap = document.createElement('div');
+  footerCloseBtnWrap.style.cssText = 'display:flex; justify-content:center; margin-top:25px; margin-bottom:25px; width:100%;';
+  
+  const footerCloseBtn = document.createElement('button');
+  footerCloseBtn.innerHTML = '✕ CLOSE ALBUM';
+  footerCloseBtn.style.cssText = 'background:#1a7fe8; border:none; color:#ffffff; font-family:"Montserrat", sans-serif; font-size:11px; font-weight:700; letter-spacing:1.5px; padding:12px 24px; border-radius:4px; cursor:pointer; text-transform:uppercase; box-shadow:0 4px 10px rgba(26, 127, 232, 0.3);';
+  footerCloseBtn.onclick = () => {
+    overlay.style.display = 'none';
+    document.body.style.overflow = '';
+  };
+  
+  footerCloseBtnWrap.appendChild(footerCloseBtn);
+  overlay.appendChild(footerCloseBtnWrap);
+
+  document.body.appendChild(overlay);
+
+  const morePhotosBtn = document.querySelector('.moments-section .open-maps-btn');
+  if (morePhotosBtn) {
+    morePhotosBtn.removeAttribute('href');
+    morePhotosBtn.removeAttribute('target');
+    morePhotosBtn.style.cursor = 'pointer';
+    morePhotosBtn.onclick = (e) => {
+      e.preventDefault();
+      overlay.style.display = 'flex';
+      overlay.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+    };
+  }
+}
+
+document.addEventListener('DOMContentLoaded', createPinterestGallery);
+
+function closeInfoPopup(event) {
+  if (event.target === document.getElementById('infoPopupOverlay')) {
+    document.getElementById('infoPopupOverlay').classList.remove('open');
+  }
+}
+
+function closeInfoPopupBtn() {
+  document.getElementById('infoPopupOverlay').classList.remove('open');
+}
+
+// Confetti Effect
+function spawnConfetti() {
+  const phone = document.querySelector('.phone');
+  for (let i = 0; i < 40; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + '%';
+    c.style.top = '-10px';
+    c.style.transform = `rotate(${Math.random() * 360}deg)`;
+    c.innerText = '$';
+    phone.appendChild(c);
+
+    const destY = Math.random() * 600 + 200;
+    const destX = (Math.random() - 0.5) * 150;
+    
+    c.animate([
+      { transform: `translate(0, 0) rotate(0deg)`, opacity: 1 },
+      { transform: `translate(${destX}px, ${destY}px) rotate(${Math.random() * 720}deg)`, opacity: 0 }
+    ], {
+      duration: 2000 + Math.random() * 1000,
+      easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+      fill: 'forwards'
+    });
+    
+    setTimeout(() => c.remove(), 3000);
+  }
+}
+
+// Moments highlight
+function highlightMoment(element) {
+  const mStrip = document.getElementById('momentsStrip');
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.moment-item').forEach(item => {
+      item.classList.remove('center-card');
+    });
+    element.classList.add('center-card');
+    
+    const containerWidth = mStrip.offsetWidth;
+    const itemWidth = element.offsetWidth;
+    const itemLeft = element.offsetLeft;
+    const targetScroll = itemLeft - (containerWidth / 2) + (itemWidth / 2);
+    
+    mStrip.scrollTo({ left: targetScroll });
+  });
+}
+
+const mStrip = document.getElementById('momentsStrip');
+const mDots = document.querySelectorAll('.moments-dot');
+
+let isScrolling;
+mStrip.addEventListener('scroll', () => {
+  window.clearTimeout(isScrolling);
+  isScrolling = setTimeout(() => {
+    const items = document.querySelectorAll('.moment-item');
+    const stripCenter = mStrip.scrollLeft + mStrip.offsetWidth / 2;
+    
+    let closestItem = null;
+    let minDiff = Infinity;
+
+    items.forEach(item => {
+      const itemCenter = item.offsetLeft + item.offsetWidth / 2;
+      const diff = Math.abs(stripCenter - itemCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestItem = item;
+      }
+    });
+
+    if (closestItem) {
+      items.forEach(item => item.classList.remove('center-card'));
+      closestItem.classList.add('center-card');
+    }
+
+    const scrollRange = mStrip.scrollWidth - mStrip.clientWidth;
+    if (scrollRange <= 0) return;
+    const idx = Math.min(Math.round((mStrip.scrollLeft / scrollRange) * 3), 3);
+    mDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }, 60);
+}, { passive: true });
+
+// RSVP
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = document.querySelector('.submit-btn');
+  const successMsg = document.getElementById('successMsg');
+  
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'SUBMITTING...';
+  submitBtn.disabled = true;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      successMsg.style.display = 'block';
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 5000);
+    } else {
+      throw new Error();
+    }
+  }).catch(error => {
+    submitBtn.textContent = 'ERROR. TRY AGAIN';
+    submitBtn.disabled = false;
+    setTimeout(() => { if(submitBtn.textContent === 'ERROR. TRY AGAIN') submitBtn.textContent = originalText; }, 3000);
+  });
+});
+
+// Countdown Logic
+function updateCountdown() {
+  const weddingDate = new Date('July 5, 2026 10:00:00').getTime();
+  const now = new Date().getTime();
+  const gap = weddingDate - now;
+
+  const second = 1000;
+  const minute = second * 60;
+  const hour = minute * 60;
+  const day = hour * 24;
+
+  const d = Math.floor(gap / day);
+  const h = Math.floor((gap % day) / hour);
+  const m = Math.floor((gap % hour) / minute);
+  const s = Math.floor((gap % minute) / second);
+
+  document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+  document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+  document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+  document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Music Control
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgMusic');
+  const muteBtn = document.getElementById('muteToggle');
+  const muteIcon = document.getElementById('muteIcon');
+
+  muteBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      muteIcon.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>';
+    } else {
+      audio.pause();
+      muteIcon.innerHTML = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9l-5 5H2v6h2l5 5V9z"></path><path d="M17.07 7.93a5 5 0 0 1 0 7.07"></path></svg>';
+    }
+  });
+});
+
+// Scroll Reveal Observer
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.scroll-reveal').forEach(el => {
+  if (!el.closest('.moments-section') && !el.closest('.board-grid-wrap')) {
+    observer.observe(el);
+  } else {
+    el.classList.add('active');
+  }
+});
+</script>
+</body>
+</html>
