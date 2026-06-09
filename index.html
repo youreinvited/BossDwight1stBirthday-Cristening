@@ -12,7 +12,7 @@
 <meta name="twitter:title" content="Boss Dwight Baptism and 1st Birthday">
 <meta name="twitter:description" content="Boss Dwight is turning one and ready for his birthday and baptism. A milestone launch he'll never remember, but we'll never forget.">
 <meta name="twitter:image" content="envelop.png">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,7 +34,7 @@ body {
   width: 100%;
   max-width: 430px;
   background: #0b1a35;
-  min-height: 100vh;
+  min-height: 100vh
   position: relative;
   overflow-x: hidden;
 }
@@ -97,7 +97,7 @@ body {
 .hero {
   position: relative;
   z-index: 1;
-  padding-top: 0;
+  padding-top: 26px;
   text-align: center;
   opacity: 0;
   transform: translateZ(0);
@@ -105,303 +105,6 @@ body {
 
 .hero.play-anim {
   animation: fadeInDown 1.2s ease-out forwards;
-}
-
-/* === INVITATION CARD HERO === */
-.invite-card {
-  background: linear-gradient(160deg, #0d2154 0%, #0b1a35 60%, #0d2a5a 100%);
-  position: relative;
-  overflow: hidden;
-  padding: 22px 18px 0 18px;
-  border-bottom: 3px solid #c9a84c;
-}
-
-.invite-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: radial-gradient(circle at 15% 50%, rgba(26,127,232,0.08) 0%, transparent 60%),
-                    radial-gradient(circle at 85% 20%, rgba(201,168,76,0.06) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.invite-corner-dots {
-  position: absolute;
-  top: 10px;
-  width: 28px;
-  height: 28px;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3px;
-}
-
-.invite-corner-dots.top-left { left: 10px; }
-.invite-corner-dots.top-right { right: 10px; }
-
-.invite-corner-dots span {
-  width: 5px;
-  height: 5px;
-  background: rgba(201,168,76,0.7);
-  border-radius: 50%;
-  display: block;
-}
-
-.invite-meeting-label {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.invite-meeting-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
-  max-width: 80px;
-}
-
-.invite-meeting-text {
-  font-size: 11px;
-  font-weight: 800;
-  color: #c9a84c;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.invite-pin {
-  font-size: 14px;
-  margin-left: 2px;
-}
-
-.invite-boss-baby {
-  font-family: 'Dancing Script', cursive;
-  font-size: 38px;
-  font-weight: 700;
-  color: #ffffff;
-  position: relative;
-  z-index: 2;
-  line-height: 1;
-  margin-bottom: 0;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-.invite-boss-baby::before,
-.invite-boss-baby::after {
-  content: '✦';
-  font-size: 16px;
-  color: #c9a84c;
-  vertical-align: middle;
-  margin: 0 6px;
-}
-
-.invite-dwight {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 76px;
-  font-weight: 900;
-  color: #ffffff;
-  line-height: 0.9;
-  letter-spacing: -2px;
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 40px rgba(26,127,232,0.2);
-}
-
-.invite-banner {
-  background: linear-gradient(90deg, #c9a84c 0%, #e8c96a 50%, #c9a84c 100%);
-  border-radius: 4px;
-  padding: 8px 20px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  position: relative;
-  z-index: 2;
-  margin: 6px 0 12px 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-}
-
-.invite-banner::before,
-.invite-banner::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-
-.invite-banner::before {
-  left: -12px;
-  border-width: 14px 14px 14px 0;
-  border-color: transparent #c9a84c transparent transparent;
-}
-
-.invite-banner::after {
-  right: -12px;
-  border-width: 14px 0 14px 14px;
-  border-color: transparent transparent transparent #c9a84c;
-}
-
-.invite-banner-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  color: #0b1a35;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.invite-banner-sup {
-  font-size: 8px;
-  font-weight: 900;
-  vertical-align: super;
-  margin-right: 1px;
-  color: #0b1a35;
-}
-
-.invite-info-row {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 0;
-  margin-bottom: 16px;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.invite-info-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 0 6px;
-}
-
-.invite-info-col + .invite-info-col {
-  border-left: 1px solid rgba(201,168,76,0.4);
-}
-
-.invite-info-icon-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #1a5cc8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(26,92,200,0.4);
-}
-
-.invite-info-icon-circle svg {
-  width: 24px;
-  height: 24px;
-  fill: #ffffff;
-}
-
-.invite-info-label {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 900;
-  color: #ffffff;
-  text-align: center;
-  line-height: 1.3;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.invite-info-sublabel {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #c9a84c;
-  text-align: center;
-  line-height: 1.2;
-  text-transform: uppercase;
-}
-
-.invite-baby-photo-wrap {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  margin: 0 -18px;
-}
-
-.invite-baby-photo-border {
-  position: relative;
-  width: 100%;
-  border-radius: 18px 18px 0 0;
-  overflow: hidden;
-  border: 3px solid #c9a84c;
-  border-bottom: none;
-  background: linear-gradient(180deg, #1a3a7a 0%, #0d2154 100%);
-  box-shadow: 0 -4px 20px rgba(201,168,76,0.2), inset 0 0 30px rgba(26,127,232,0.1);
-}
-
-.invite-baby-photo-dots {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  pointer-events: none;
-  z-index: 3;
-  background-image: radial-gradient(circle, rgba(26,127,232,0.15) 1px, transparent 1px);
-  background-size: 18px 18px;
-}
-
-.invite-baby-photo {
-  width: 100%;
-  height: auto;
-  display: block;
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  will-change: transform, opacity;
-}
-
-.hero.play-anim .invite-baby-photo {
-  animation: zoomInBounce 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-.invite-sparkle {
-  position: absolute;
-  z-index: 4;
-  color: #c9a84c;
-  font-size: 22px;
-  pointer-events: none;
-}
-
-.invite-sparkle.left { bottom: 30%; left: 12px; }
-.invite-sparkle.right { bottom: 30%; right: 12px; }
-
-.invite-tagline {
-  font-family: 'Dancing Script', cursive;
-  font-size: 20px;
-  font-weight: 700;
-  color: #c9a84c;
-  text-align: center;
-  padding: 10px 20px 4px;
-  position: relative;
-  z-index: 2;
-}
-
-.invite-tagline-heart {
-  display: block;
-  text-align: center;
-  font-size: 16px;
-  color: #c9a84c;
-  margin-bottom: 6px;
-  position: relative;
-  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -1329,78 +1032,16 @@ body {
   </button>
 
   <div class="hero" id="heroSection">
+    <div class="hero-eyebrow">Our Baby</div>
+    <div class="hero-title">BOSS DWIGHT</div>
+    <div class="hero-subtitle">IS TURNING ONE</div>
 
-    <div class="invite-card">
-
-      <div class="invite-corner-dots top-left">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="invite-corner-dots top-right">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-
-      <div class="invite-meeting-label">
-        <div class="invite-meeting-line"></div>
-        <span class="invite-meeting-text">MEETING REMINDER</span>
-        <span class="invite-pin">📌</span>
-        <div class="invite-meeting-line"></div>
-      </div>
-
-      <div class="invite-boss-baby">Boss Baby</div>
-
-      <div class="invite-dwight">DWIGHT</div>
-
-      <div style="display:flex; justify-content:center; margin: 4px 0 8px;">
-        <div class="invite-banner">
-          <span class="invite-banner-text"><span class="invite-banner-sup">1ST</span> BIRTHDAY & BAPTISM</span>
-        </div>
-      </div>
-
-      <div class="invite-info-row">
-        <div class="invite-info-col">
-          <div class="invite-info-icon-circle">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="#fff" stroke-width="2"/><line x1="16" y1="2" x2="16" y2="6" stroke="#fff" stroke-width="2"/><line x1="8" y1="2" x2="8" y2="6" stroke="#fff" stroke-width="2"/><line x1="3" y1="10" x2="21" y2="10" stroke="#fff" stroke-width="2"/><rect x="7" y="13" width="3" height="3" rx="0.5" fill="#fff"/><rect x="11" y="13" width="3" height="3" rx="0.5" fill="#fff"/></svg>
-          </div>
-          <div class="invite-info-label">05 JULY 2026</div>
-          <div class="invite-info-sublabel">SUNDAY</div>
-        </div>
-        <div class="invite-info-col">
-          <div class="invite-info-icon-circle">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3a6 6 0 0 0 0 12A6 6 0 0 0 12 3z" fill="none" stroke="#fff" stroke-width="2"/><path d="M4 20c0-2 4-4 8-4s8 2 8 4" fill="none" stroke="#fff" stroke-width="2"/><path d="M12 5v2M10 7h4M8 3h8" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><path d="M11 9l1 1" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <div class="invite-info-label">CHURCH</div>
-          <div class="invite-info-sublabel">10:00 AM</div>
-        </div>
-        <div class="invite-info-col">
-          <div class="invite-info-icon-circle">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="8" width="18" height="13" rx="1" fill="none" stroke="#fff" stroke-width="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2" fill="none" stroke="#fff" stroke-width="2"/><line x1="12" y1="13" x2="12" y2="15" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M9 8h6" stroke="#fff" stroke-width="1" stroke-dasharray="1 2"/></svg>
-          </div>
-          <div class="invite-info-label">RECEPTION</div>
-          <div class="invite-info-sublabel">11:00 AM</div>
-        </div>
-      </div>
-
-      <div class="invite-baby-photo-wrap">
-        <div class="invite-baby-photo-border">
-          <div class="invite-baby-photo-dots"></div>
-          <div class="invite-sparkle left">✦</div>
-          <div class="invite-sparkle right">✦</div>
-          <img src="Dwightfront.png" alt="Boss Dwight" class="invite-baby-photo">
-        </div>
-      </div>
-
-      <div class="invite-tagline">We look forward to seeing you!</div>
-      <div class="invite-tagline-heart">♥</div>
-
+    <div class="baby-wrap">
+      <img src="Dwightfront.png" alt="Boss Dwight" class="baby-photo">
     </div>
-
   </div>
 
-  <div class="info-icons-bar" style="margin-top: 16px;">
+  <div class="info-icons-bar">
     <button class="info-icon-btn" onclick="openInfoPopup('date')">
       <div class="info-icon-circle">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#1a7fe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1650,7 +1291,7 @@ body {
       </div>
       <div class="map-venue-label">CEREMONY</div>
       <a class="open-maps-btn"
-         href="https://maps.app.goo.gl/Gp7DWS9LMqyFBkQMA"
+         href="https://maps.app.goo.gl/96DcC4vKqrYwsN1G9"
          target="_blank">OPEN IN MAPS</a>
 
       <div class="map-embed-wrap">
@@ -1658,7 +1299,7 @@ body {
       </div>
       <div class="map-venue-label">RECEPTION</div>
       <a class="open-maps-btn"
-         href="https://maps.app.goo.gl/oCKVf9eyNepzKW41A"
+         href="https://maps.app.goo.gl/uq4w7mnHtSqkoZZj7"
          target="_blank">OPEN IN MAPS</a>
     </div>
 
