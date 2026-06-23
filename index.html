@@ -34,7 +34,7 @@ body {
   width: 100%;
   max-width: 430px;
   background: #0b1a35;
-  min-height: 100vh
+  min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
@@ -364,7 +364,7 @@ body {
 
 .board-pairs-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 10px;
 }
 
@@ -396,6 +396,7 @@ body {
   animation: iconFloat 3s ease-in-out infinite;
   overflow: hidden;
   transform: translateZ(0);
+  will-change: transform;
 }
 
 .board-avatar-circle svg {
@@ -1223,6 +1224,13 @@ body {
         <div class="board-name">Gino<br>Apinar</div>
       </div>
 
+      <div class="board-card">
+        <div class="board-avatar-circle">
+          <img src="https://res.cloudinary.com/dka59tgv5/image/upload/v1782173623/AIRetouch_20260623_073954510_fgcdl4.png" alt="Theresa Mae Galura">
+        </div>
+        <div class="board-name">Theresa Mae<br>Galura</div>
+      </div>
+
     </div>
   </div>
 
@@ -1306,7 +1314,7 @@ body {
     <div class="bottom-card scroll-reveal" id="rsvp">
       <form action="https://formspree.io/f/xwvyrywn" method="POST" id="rsvpForm">
         <div class="bottom-card-title">Please submit your corporate status report for Boss Dwight's big day.</div>
-        <div class="bottom-card-supporting" style="font-weight:700; color:#1a7fe8;">Submit your RSVP not later than June 20, 2026.</div>
+        <div class="bottom-card-supporting" style="font-weight:700; color:#1a7fe8;">Submit your RSVP not later than June 25, 2026.</div>
         
         <label class="form-label" style="margin-bottom: 15px;">NAME OF ATTENDEES:</label>
         <textarea class="form-textarea" name="Guest Name" id="nameInput" style="height: 100px;" required></textarea>
